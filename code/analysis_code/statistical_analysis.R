@@ -69,7 +69,7 @@ saveRDS(boxplot, file = boxplot_file)
 
 ############################
 #### Scatter plot
-# create a scatter plot with weight on x-axis and age on y-axis
+# create a scatter plot with weight on x-axis and age on y-axisj
 scatterplot <- ggplot(mydata, aes(Weight, Age)) +
   geom_point()
 
