@@ -8,6 +8,7 @@
 library(ggplot2) #for plotting
 library(broom) #for cleaning up output from lm()
 library(here) #for data loading/saving
+#library(tidyverse)
 
 #path to data
 #note the use of the here() package and not absolute paths
@@ -53,4 +54,28 @@ print(lmtable2)
 table_file2 = here("results", "resulttable2.rds")
 saveRDS(lmtable2, file = table_file2)
 
-  
+############################
+#### Box plot
+# create box plot with Pet on x-axis and Height on y-axis
+boxplot <- ggplot(mydata, aes(Pet, Height)) +
+  geom_boxplot()
+
+#look at box plot
+print(boxplot)
+
+#save box plot
+boxplot_file = here("results", "boxplot.rds")
+saveRDS(boxplot, file = boxplot_file)
+
+############################
+#### Scatter plot
+# create a scatter plot with weight on x-axis and age on y-axis
+scatterplot <- ggplot(mydata, aes(Weight, Age)) +
+  geom_point()
+
+#look at scatter plot
+print(scatterplot)
+
+#save scatter plot
+scatterplot_file = here("results", "scatterplot.rds")
+saveRDS(scatterplot, file = scatterplot_file)
